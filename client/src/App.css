@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=News+Cycle:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@font-face {
+    font-family: Ezrademo;
+    src: url(../public/assets/fonts/Ezrademo-JRrX7.otf);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FrontPage;
+    src: url(../public/assets/fonts/FrontPageNews11-ADw6.ttf);
+    font-style: normal;
+}
+
+
+body {
+    margin: unset !important;
+}
+
+.nav-link {
+    text-decoration: none !important;
+}
+
+/* styles.css or your-global-styles.css */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #00BFFF;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+
+/* Bright theme for Quill editor */
+.ql-snow .ql-editor {
+    background-color: #ffffff; /* Light background */
+    color: #333333; /* Dark text */
+  }
+  
+  .ql-snow .ql-toolbar {
+    background-color: #f4f4f4; /* Light toolbar background */
+    border: 1px solid #ccc; /* Border for toolbar */
+  }
+  
+  .ql-snow .ql-picker, .ql-snow .ql-button {
+    background-color: #f4f4f4 !important; /* Light background for dropdowns and buttons */
+    color: #333 !important; /* Dark text color for buttons */
+  }
+  
+  .ql-snow .ql-tooltip {
+    background-color: #f4f4f4 !important; /* Light background for tooltips */
+    color: #333 !important; /* Dark text color */
+  }
+  
+  .ql-snow .ql-picker-item:hover {
+    background-color: #e0e0e0 !important; /* Hover effect */
+  }
+  
+  .ql-snow .ql-picker.ql-expanded .ql-picker-item:hover {
+    background-color: #e0e0e0 !important;
+  }
+  
