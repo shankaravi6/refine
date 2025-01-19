@@ -39,7 +39,7 @@ const ArticleSection = () => {
   useMemo(() => {
     const getArticleData = async () => {
       try {
-        const articleDataResponse = await axios.get(`http://localhost:5050/api/data/${"refine_article"}`);
+        const articleDataResponse = await axios.get(`https://blackcms.onrender.com/api/data/${"refine_article"}`);
         console.log("articleDataResponse", articleDataResponse.data.data);
 
         const formattedArticleData = articleDataResponse.data.data

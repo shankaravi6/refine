@@ -32,7 +32,7 @@ const MasonryLayout = ({ articleData }) => {
               <SoFlex key={index} dir="column">
                 <Fade style={{width:"100%"}}>
                   <SoBox onClick={() => handleArticleDet(data)} className="relative cursor-pointer">
-                    <SoImg width="100%" src={`http://localhost:5050/uploads/${data.imageName}`} />
+                    <SoImg width="100%" src={`https://blackcms.onrender.com/uploads/${data.imageName}`} />
                     <SoSubTitle
                       tt="uppercase"
                       className="absolute bottom-0 right-0"
