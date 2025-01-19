@@ -1,6 +1,7 @@
 import React from 'react';
 import { SoBox, SoFlex, SoImg, SoSpan, SoSubTitle } from '../../styledcomponents/globalStyles';
 import MainLogo from '../../../../public/assets/images/logo/main.png';
+import {Link} from 'react-router-dom';
 
 const NavLogo = () => {
   return (
@@ -9,7 +10,7 @@ const NavLogo = () => {
         <SoImg src={MainLogo} sw='50%' width='100%'></SoImg>
         </SoBox>
         <SoBox>
-            <SoSubTitle fs='clamp(1rem,5vw,1.35rem)'>RE<SoSpan fst='italic' fs='clamp(1rem,5vw,1.35rem)'>FINE</SoSpan></SoSubTitle>
+            <Link to='/'><SoSubTitle fs='clamp(1rem,5vw,1.35rem)'>RE<SoSpan fst='italic' fs='clamp(1rem,5vw,1.35rem)'>FINE</SoSpan></SoSubTitle></Link>
         </SoBox>
    </SoFlex>
   );

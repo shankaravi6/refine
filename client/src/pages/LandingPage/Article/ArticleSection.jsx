@@ -39,14 +39,17 @@ const ArticleSection = () => {
   useMemo(() => {
     const getArticleData = async () => {
       try {
-        const articleDataResponse = await axios.get('http://localhost:5000/getarticle');
-        console.log("articleDataResponse", articleDataResponse.data);
+        const articleDataResponse = await axios.get(`http://localhost:5050/api/data/${"refine_article"}`);
+        console.log("articleDataResponse", articleDataResponse.data.data);
 
-        const formattedArticleData = articleDataResponse.data.map(article => {
-          const date = new Date(article.date);
+        const formattedArticleData = articleDataResponse.data.data
+        .filter(article => article.active || article.active == 'true')
+        .map(article => {
+          const date = new Date(article.createdDate);
           const formattedDate = `${date.getDate()} ${getMonthName(date.getMonth())}`;
           return { ...article, date: formattedDate };
         });
+      
 
         setArticleData(formattedArticleData);
       } catch (error) {
