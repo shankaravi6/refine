@@ -19,7 +19,7 @@ const NavBar = () => {
         <SoSection p='10px'>
           <SoFlex p="15px 0px" jc="space-between" ai="center">
             <NavLogo />
-            <SoFlex gap="25px" className="nav-links">
+            <SoFlex gap="25px" s_gap='10px' className="nav-links">
               <NavLinks />
               <NavButtons/>
             </SoFlex>
@@ -37,7 +37,7 @@ const NavBar = () => {
           <CloseIconWrapper onClick={toggleMenu}>
             <FiX size={24} />
           </CloseIconWrapper>
-          <SoFlex gap="25px" className="menu-links">
+          <SoFlex gap="25px" s_gap='20px' className="menu-links">
             <NavLinks />
             <NavButtons/>
           </SoFlex>

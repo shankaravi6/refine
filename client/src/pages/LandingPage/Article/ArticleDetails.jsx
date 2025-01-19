@@ -38,9 +38,11 @@ const ArticleDetails = () => {
     <SoContainer>
       <NavBar />
       <SoSection>
-        <SoFlex dir="column" p="2.5rem 10rem 0rem 10rem">
+        <SoFlex dir="column" p="2.5rem 10rem 0rem 10rem" sp='2rem 2.5rem 0 2.5rem'>
           <SoBox
             p="0rem 5rem 0rem 5rem"
+            sp="0rem"
+            mp="0rem"
             w="100%"
             className="flex flex-col justify-center items-center"
           >
@@ -59,20 +61,22 @@ const ArticleDetails = () => {
               {article?.shortDesc}
             </SoHeadLineText>
           </SoBox>
-          <SoBox p="2rem 5rem 0rem 5rem"
+          <SoBox p="2rem 5rem 0rem 5rem" sp="2rem 5rem 0rem 5rem" mp="2rem 5rem 0rem 5rem"
             w="100%"
             className="flex justify-between items-center">
-            <SoBox bg={palette.tag.bg} p="0.25rem 1rem" br="0.2rem" className="flex items-center gap-2">
+            <SoBox bg={palette.tag.bg} p="0.25rem 1rem" sp="0.25rem 1rem" mp="0.25rem 1rem" br="0.2rem" className="flex items-center gap-2">
             <FaPenNib style={{color:`${palette.tag.text}`}} /> 
             <SoTypography  color={palette.tag.text} ls='0' fs="clamp(0.7rem, 5vw, 0.95rem)">{article?.author}</SoTypography>
             </SoBox>
-            <SoBox bg={palette.tag.bg} p="0.25rem 1rem" br="0.2rem" className="flex items-center gap-2">
+            <SoBox bg={palette.tag.bg} p="0.25rem 1rem" sp="0.25rem 1rem" mp="0.25rem 1rem" br="0.2rem" className="flex items-center gap-2">
             <MdCategory style={{color:`${palette.tag.text}`}} /> 
             <SoTypography  color={palette.tag.text} ls='0' fs="clamp(0.7rem, 5vw, 0.95rem)">{article?.category}</SoTypography>
             </SoBox>
           </SoBox>
           <SoBox
-            p="3rem 5rem 0rem 5rem"
+            p="3rem 2.5rem 0rem 2.5rem"
+            sp="3rem 2.5rem 0rem 2.5rem"
+            mp="3rem 2.5rem 0rem 2.5rem"
             w="100%"
             className="flex justify-center items-center"
           >
@@ -80,6 +84,8 @@ const ArticleDetails = () => {
           </SoBox>
           <SoBox
             p="2rem 5rem 2rem 5rem"
+            sp="2rem 0rem 2rem 0rem"
+            mp="2rem 0rem 2rem 0rem"
             w="100%"
             className="flex justify-center items-center"
           >

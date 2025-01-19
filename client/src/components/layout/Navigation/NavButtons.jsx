@@ -17,7 +17,7 @@ const NavButtons = () => {
   const dispatch = useDispatch();
 
   return (
-    <SoFlex gap='20px'>
+    <SoFlex gap='20px' s_gap='20px'>
         <SoPlainButton>Become an author</SoPlainButton>
         {mode == 'light' ? <SoCover className='cursor-pointer' onClick={() => {dispatch(setMode("dark"))}}><DarkModeIcon/></SoCover> : <SoCover className='cursor-pointer' onClick={() => {dispatch(setMode("light"))}}><LightModeIcon style={{color:`${colorTokens.drops[200]}`}} /></SoCover>}
     </SoFlex>

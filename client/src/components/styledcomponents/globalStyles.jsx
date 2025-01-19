@@ -119,9 +119,12 @@ export const SoBox = styled.div`
     height: ${(props) => (props.sh ? props.sh : "auto")};
     transform: translateX(0) !important;
     display: ${(props) => (props.sdisplay ? props.sdisplay : "flex")};
+    padding: ${(props) => (props.sp ? props.sp : "auto")};
+
   }
   @media screen and (max-width: 1125px) {
     width: ${(props) => (props.mw ? props.mw : "none")};
+    padding: ${(props) => (props.mp ? props.mp : "auto")};
   }
 `;
 
