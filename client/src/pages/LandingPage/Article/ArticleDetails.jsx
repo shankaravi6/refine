@@ -63,7 +63,7 @@ const ArticleDetails = () => {
           </SoBox>
           <SoBox p="2rem 5rem 0rem 5rem" sp="2rem 5rem 0rem 5rem" mp="2rem 5rem 0rem 5rem"
             w="100%"
-            className="flex justify-between items-center">
+            className="flex justify-between items-center gap-5">
             <SoBox bg={palette.tag.bg} p="0.25rem 1rem" sp="0.25rem 1rem" mp="0.25rem 1rem" br="0.2rem" className="flex items-center gap-2">
             <FaPenNib style={{color:`${palette.tag.text}`}} /> 
             <SoTypography  color={palette.tag.text} ls='0' fs="clamp(0.7rem, 5vw, 0.95rem)">{article?.author}</SoTypography>
