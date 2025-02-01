@@ -99,7 +99,7 @@ export const SoFlex = SiloComponent(styled.div`
     justify-content: ${(props) => (props.sjc ? props.sjc : "center")};
     width: ${(props) => (props.sw ? props.sw : "unset")};
     height: ${(props) => (props.sh ? props.sh : "unset")};
-    gap: ${({ s_gap }) => (s_gap ? s_gap : "unset")};
+    gap: ${({ s_gap }) => (s_gap ? s_gap : "1rem")};
   }
 `);
 

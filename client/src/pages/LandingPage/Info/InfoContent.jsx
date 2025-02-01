@@ -19,7 +19,7 @@ const InfoContent = () => {
 
   return (
     <SoBox w="100%">
-      <SoFlex w="100%" h='unset' jc="center" gap='20px' dir='column'>
+      <SoFlex w="100%" h='unset' jc="center" gap='20px' s_gap="0.5rem" dir='column'>
         <SoFlex dir='column' al='flex-end'>
           <SoSubTitle ta='left' fs="clamp(1.5rem,5vw,2.75rem)">WATCH UPCOMING EVENTS</SoSubTitle>
           <SoHeadLineText fs="clamp(1.25rem,5vw,3.5rem)">from</SoHeadLineText>

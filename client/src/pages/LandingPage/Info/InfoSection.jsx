@@ -7,7 +7,7 @@ const InfoSection = () => {
   return (
     <SoSection mp='10px' sp='10px'>
         <SoCover m='100px 0 0 0'>
-        <SoFlex gap='0 5rem'>
+        <SoFlex gap='0 5rem' s_gap="1rem">
             <InfoImage/>
             <InfoContent/>
         </SoFlex>
