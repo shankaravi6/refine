@@ -1,7 +1,7 @@
 import React from 'react';
 import { SoBox, SoFlex, SoImg, SoSpan, SoSubTitle } from '../../styledcomponents/globalStyles';
 import MainLogo from '../../../../public/assets/images/logo/main.png';
-import MainLogoDark from '../../../../public/assets/images/logo/main-dark.png';
+import MainLogoDark from '../../../../public/assets/images/logo/mani-dark.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
