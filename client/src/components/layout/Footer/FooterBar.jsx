@@ -14,7 +14,7 @@ const FooterBar = () => {
         </SoFlex>
         <SoFlex dir='column' al='flex-start'>
             <SoTypography fs='14px'>UNISERSAL SUBJET</SoTypography>
-            <SoHeadLineText fst='normal' fs='14px'>REFINE @2024</SoHeadLineText>
+            <SoHeadLineText fst='normal' fs='14px'>© 2025 <a href="https://shanvix.netlify.app/">ShanVix</a></SoHeadLineText>
         </SoFlex>
         </SoFlex>
        </SoSection>
