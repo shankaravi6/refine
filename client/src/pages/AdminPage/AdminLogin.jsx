@@ -22,15 +22,14 @@ import { setAdminLogin, setMode } from "../../store";
 
 import { Formik } from "formik";
 import * as yup from "yup";
-import { encryptReq } from "../../utlis/EncryptionReq";
-import axios from 'axios';
-import { decryptReq } from "../../utlis/DecryptionReq";
+import { encryptReq } from "../../utils/EncryptionReq";
+import axios from "axios";
+import { decryptReq } from "../../utils/DecryptionReq";
 
 const AdminLogin = () => {
   const dispatch = useDispatch();
   const adminLogin = useSelector((state) => state.shopping.adminLogin);
   const navigate = useNavigate();
-
 
   useMemo(() => {
     dispatch(setMode("dark"));
@@ -38,7 +37,7 @@ const AdminLogin = () => {
 
   useEffect(() => {
     if (adminLogin) {
-      navigate('/admin/post');
+      navigate("/admin/post");
     }
   }, [adminLogin, navigate]);
 
@@ -65,22 +64,22 @@ const AdminLogin = () => {
       .matches(passwordRules, { message: "Please create a stronger password" }),
   });
 
-
-
   const handleSubmit = async (values, onSubmitProps) => {
     console.log(values);
     const encryptData = encryptReq(values);
-    console.log(encryptData)
+    console.log(encryptData);
 
-    const adminLoginResponse = await axios.post('http://localhost:6060/silo_blog/admin_login', {data: encryptData});
+    const adminLoginResponse = await axios.post(
+      "http://localhost:6060/silo_blog/admin_login",
+      { data: encryptData }
+    );
     console.log(adminLoginResponse);
-    const decryptData = decryptReq(adminLoginResponse.data.data)
-    console.log(decryptData)
-    dispatch(setAdminLogin(decryptData.message))
-    if(decryptData.message) {
-      navigate('/admin/post')
+    const decryptData = decryptReq(adminLoginResponse.data.data);
+    console.log(decryptData);
+    dispatch(setAdminLogin(decryptData.message));
+    if (decryptData.message) {
+      navigate("/admin/post");
     } else {
-      
     }
     onSubmitProps.resetForm();
   };

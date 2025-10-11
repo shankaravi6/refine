@@ -18,8 +18,8 @@ const MasonryLayout = ({ articleData }) => {
   const navigate = useNavigate();
 
   const handleArticleDet = (articleData) => {
-    navigate('/articledetails', { state: { articleData } });
-  }
+    navigate("/articledetails", { state: { articleData } });
+  };
 
   return (
     <SoCover m="20px 0">
@@ -30,14 +30,18 @@ const MasonryLayout = ({ articleData }) => {
           {articleData.map((data, index) => {
             return (
               <SoFlex key={index} dir="column">
-                <Fade style={{width:"100%"}}>
-                  <SoBox onClick={() => handleArticleDet(data)} className="relative cursor-pointer">
-                    <SoImg width="100%" src={`https://blackcms.onrender.com/uploads/${data.imageName}`} />
+                <Fade style={{ width: "100%" }}>
+                  <SoBox
+                    onClick={() => handleArticleDet(data)}
+                    className="relative cursor-pointer"
+                  >
+                    <SoImg width="100%" src={`${data.imageName}`} />
                     <SoSubTitle
                       tt="uppercase"
                       className="absolute bottom-0 right-0"
                       style={{
-                        background: "linear-gradient(360deg, black, transparent)",
+                        background:
+                          "linear-gradient(360deg, black, transparent)",
                         padding: "4px 8px",
                         fontSize: "14px",
                       }}
@@ -47,11 +51,27 @@ const MasonryLayout = ({ articleData }) => {
                     </SoSubTitle>
                   </SoBox>
                   <SoBox w="100%">
-                    <SoFlex sjc='space-between' jc="space-between" sw='100%' sm_dir="row" w="100%">
-                      <SoTitle tt="uppercase" s_ml='0px' ls='0px' fs="clamp(.5rem, 5vw, .75rem)">
+                    <SoFlex
+                      sjc="space-between"
+                      jc="space-between"
+                      sw="100%"
+                      sm_dir="row"
+                      w="100%"
+                    >
+                      <SoTitle
+                        tt="uppercase"
+                        s_ml="0px"
+                        ls="0px"
+                        fs="clamp(.5rem, 5vw, .75rem)"
+                      >
                         {data.author}
                       </SoTitle>
-                      <SoTitle tt="uppercase" s_ml='0px' ls='0px' fs="clamp(.5rem, 5vw, .75rem)">
+                      <SoTitle
+                        tt="uppercase"
+                        s_ml="0px"
+                        ls="0px"
+                        fs="clamp(.5rem, 5vw, .75rem)"
+                      >
                         {data.date}
                       </SoTitle>
                     </SoFlex>

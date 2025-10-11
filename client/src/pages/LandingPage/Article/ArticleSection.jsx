@@ -14,6 +14,7 @@ import SoButton from "../../../components/common/SoButton";
 import axios from "axios";
 import { articleDataList } from "../../../datas/ArticleData";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { BASE_URL } from "../../../utils/baseURL";
 
 const ArticleSection = () => {
   // const [articleData, setArticleData] = useState(articleDataList.slice(0, 5));
@@ -23,10 +24,7 @@ const ArticleSection = () => {
   const fetchMoreArticles = () => {
     setTimeout(() => {
       const currentLength = articleData.length;
-      const moreArticles = articleData.slice(
-        currentLength,
-        currentLength + 5
-      );
+      const moreArticles = articleData.slice(currentLength, currentLength + 5);
 
       if (moreArticles.length > 0) {
         setArticleData((prevArticles) => [...prevArticles, ...moreArticles]);
@@ -36,20 +34,24 @@ const ArticleSection = () => {
     }, 1500);
   };
 
-  useMemo(() => {
+  useEffect(() => {
     const getArticleData = async () => {
       try {
-        const articleDataResponse = await axios.get(`https://blackcms.onrender.com/api/data/${"refine_article"}`);
+        const articleDataResponse = await axios.get(
+          `${BASE_URL}/api/data/${"refine_article"}`
+        );
         console.log("articleDataResponse", articleDataResponse.data.data);
 
         const formattedArticleData = articleDataResponse.data.data
-        .filter(article => article.active || article.active == 'true')
-        .map(article => {
-          const date = new Date(article.createdDate);
-          const formattedDate = `${date.getDate()} ${getMonthName(date.getMonth())}`;
-          return { ...article, date: formattedDate };
-        });
-      
+          .filter((article) => article.active || article.active === "true")
+          .sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate))
+          .map((article) => {
+            const date = new Date(article.createdDate);
+            const formattedDate = `${date.getDate()} ${getMonthName(
+              date.getMonth()
+            )}`;
+            return { ...article, date: formattedDate };
+          });
 
         setArticleData(formattedArticleData);
       } catch (error) {
@@ -57,7 +59,7 @@ const ArticleSection = () => {
       }
     };
     getArticleData();
-  },[])
+  }, []);
 
   const getMonthName = (monthIndex) => {
     const months = [
@@ -78,7 +80,7 @@ const ArticleSection = () => {
   };
 
   return (
-    <SoSection mp='10px' sp='10px'>
+    <SoSection mp="10px" sp="10px">
       <SoCover m="100px 0 0 0">
         <SoFlex>
           <SoFlex>
@@ -95,7 +97,11 @@ const ArticleSection = () => {
                 <SoSpan className="spinner"></SoSpan>
               </SoFlex>
             }
-            endMessage={<SoSubTitle fs='15px' style={{ textAlign: "center" }}>No more articles</SoSubTitle>}
+            endMessage={
+              <SoSubTitle fs="15px" style={{ textAlign: "center" }}>
+                No more articles
+              </SoSubTitle>
+            }
           >
             <MasonryLayout articleData={articleData && articleData} />
           </InfiniteScroll>

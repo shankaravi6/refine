@@ -16,7 +16,6 @@ import { useDispatch } from "react-redux";
 import { setMode } from "../../store";
 
 const LandingPage = () => {
-
   const dispatch = useDispatch();
 
   // useMemo(() => {
@@ -27,9 +26,9 @@ const LandingPage = () => {
     <SoContainer>
       <NavBar />
       <BannerSection />
-      <InfoSection/>
-      <ArticleSection/>
-      <FooterBar/>
+      <InfoSection />
+      <ArticleSection />
+      <FooterBar />
     </SoContainer>
   );
 };
