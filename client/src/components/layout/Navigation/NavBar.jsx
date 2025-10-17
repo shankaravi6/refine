@@ -32,6 +32,7 @@ const NavBar = () => {
               gap="25px"
               s_gap="10px"
               p="20px 0 0 0"
+              sp="35px 0 0 0"
               className="nav-links"
             >
               <NavLinks />

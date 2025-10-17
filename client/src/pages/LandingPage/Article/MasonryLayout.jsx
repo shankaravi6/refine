@@ -42,7 +42,7 @@ const MasonryLayout = ({ articleData }) => {
                       style={{
                         // background:
                         //   "linear-gradient(360deg, black, transparent)",
-                        padding: "0px 8px",
+                        padding: "0px 4px",
                         fontSize: "15px",
                       }}
                       color={palette.text.title}

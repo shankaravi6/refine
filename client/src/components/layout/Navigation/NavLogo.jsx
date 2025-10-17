@@ -15,7 +15,7 @@ const NavLogo = () => {
   const mode = useSelector((state) => state.shopping.mode);
 
   return (
-    <SoFlex gap="20px" p="20px 0 0 0" s_gap="0" sm_dir="row">
+    <SoFlex gap="20px" p="20px 0 0 0" sp="35px 0 0 0" s_gap="0" sm_dir="row">
       <SoBox w="30px" h="30px" sw="50px" sh="unset" mw="50px" mh="unset">
         <SoImg
           src={mode === "dark" ? MainLogoDark : MainLogo}
