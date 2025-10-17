@@ -18,6 +18,8 @@ import { useThemeContext } from "../../../context/theme/ThemeContext";
 import { FaPenNib } from "react-icons/fa";
 import { MdCategory } from "react-icons/md";
 import SoPlainButton from "../../../components/common/SoPlainButton";
+import SoButton from "../../../components/common/SoButton";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const ArticleDetails = () => {
   const location = useLocation();
@@ -41,7 +43,7 @@ const ArticleDetails = () => {
       <SoSection>
         <SoFlex
           dir="column"
-          p="2.5rem 10rem 0rem 10rem"
+          p="2rem 10rem 0rem 10rem"
           sp="2rem 2.5rem 0 2.5rem"
         >
           <SoBox
@@ -52,9 +54,13 @@ const ArticleDetails = () => {
             className="flex flex-col justify-center items-center"
           >
             <SoFlex jc="space-between" w="100%">
-              <SoPlainButton back={true}>
+              <SoTypography
+                fs="16px"
+                className="flex gap-2 items-center underline cursor-pointer"
+              >
+                <ArrowBackIcon style={{ fontSize: "22px" }} />
                 <Link to="/">Back</Link>
-              </SoPlainButton>
+              </SoTypography>
               <SoTypography
                 fw="500"
                 p="1rem 0"

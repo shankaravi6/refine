@@ -29,7 +29,7 @@ const MasonryLayout = ({ articleData }) => {
         <Masonry columnsCount={3} gutter="16px">
           {articleData.map((data, index) => {
             return (
-              <SoFlex key={index} dir="column">
+              <SoFlex key={index} gap="0px" s_gap="0" dir="column">
                 <Fade style={{ width: "100%" }}>
                   <SoBox
                     onClick={() => handleArticleDet(data)}
@@ -40,10 +40,10 @@ const MasonryLayout = ({ articleData }) => {
                       tt="uppercase"
                       className="absolute bottom-0 right-0"
                       style={{
-                        background:
-                          "linear-gradient(360deg, black, transparent)",
-                        padding: "4px 8px",
-                        fontSize: "14px",
+                        // background:
+                        //   "linear-gradient(360deg, black, transparent)",
+                        padding: "0px 8px",
+                        fontSize: "15px",
                       }}
                       color={palette.text.title}
                     >

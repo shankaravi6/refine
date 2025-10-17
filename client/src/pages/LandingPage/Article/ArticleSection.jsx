@@ -81,7 +81,7 @@ const ArticleSection = () => {
 
   return (
     <SoSection mp="10px" sp="10px">
-      <SoCover m="100px 0 0 0">
+      <SoCover m="100px 0 0 0" p="0 1rem">
         <SoFlex>
           <SoFlex>
             <SoSubTitle tt="uppercase">Weekly Articles</SoSubTitle>

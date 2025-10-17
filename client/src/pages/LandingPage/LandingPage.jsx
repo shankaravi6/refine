@@ -8,8 +8,8 @@ import {
 } from "../../components/styledcomponents/globalStyles";
 import SoButton from "../../components/common/SoButton";
 import NavBar from "../../components/layout/Navigation/NavBar";
-// import BannerSection from "./Banner/BannerSection";
-// import InfoSection from "./Info/InfoSection";
+import BannerSection from "./Banner/BannerSection";
+import InfoSection from "./Info/InfoSection";
 import ArticleSection from "./Article/ArticleSection";
 import FooterBar from "../../components/layout/Footer/FooterBar";
 import { useDispatch } from "react-redux";
@@ -25,8 +25,8 @@ const LandingPage = () => {
   return (
     <SoContainer>
       <NavBar />
-      {/* <BannerSection /> */}
-      {/* <InfoSection /> */}
+      <BannerSection />
+      <InfoSection />
       <ArticleSection />
       <FooterBar />
     </SoContainer>
