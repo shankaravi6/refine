@@ -26,17 +26,17 @@ const LandingPage = () => {
 
   useEffect(() => {
     // Restore scroll position when navigating back from article details
-    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
-    if (savedScrollPosition && location.pathname === '/') {
+    const savedScrollPosition = sessionStorage.getItem("scrollPosition");
+    if (savedScrollPosition && location.pathname === "/") {
       // Use requestAnimationFrame to ensure DOM is ready
       requestAnimationFrame(() => {
         setTimeout(() => {
           window.scrollTo({
             top: parseInt(savedScrollPosition, 10),
-            behavior: 'instant'
+            behavior: "instant",
           });
           // Clear the saved position after restoring
-          sessionStorage.removeItem('scrollPosition');
+          sessionStorage.removeItem("scrollPosition");
         }, 150);
       });
     }
@@ -45,9 +45,9 @@ const LandingPage = () => {
   return (
     <SoContainer>
       <NavBar />
-      <BannerSection />
-      <InfoSection />
+      {/* <BannerSection /> */}
       <ArticleSection />
+      <InfoSection />
       <FooterBar />
     </SoContainer>
   );
