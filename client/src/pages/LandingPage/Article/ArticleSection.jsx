@@ -37,7 +37,7 @@ const ArticleSection = () => {
 
   useEffect(() => {
     // Check if we have cached data in sessionStorage
-    const cachedData = sessionStorage.getItem('cachedArticleData');
+    const cachedData = sessionStorage.getItem("cachedArticleData");
     if (cachedData) {
       try {
         const parsedData = JSON.parse(cachedData);
@@ -75,7 +75,10 @@ const ArticleSection = () => {
 
         setArticleData(formattedArticleData);
         // Cache the data in sessionStorage
-        sessionStorage.setItem('cachedArticleData', JSON.stringify(formattedArticleData));
+        sessionStorage.setItem(
+          "cachedArticleData",
+          JSON.stringify(formattedArticleData)
+        );
       } catch (error) {
         console.error("Error fetching article data:", error);
         hasFetchedRef.current = false; // Reset on error so it can retry
@@ -104,7 +107,7 @@ const ArticleSection = () => {
 
   return (
     <SoSection mp="10px" sp="10px">
-      <SoCover m="100px 0 0 0" p="0 1rem">
+      <SoCover m="100px 0 0 0" sm_m="70px 0 0 0" p="0 1rem">
         <SoFlex>
           <SoFlex>
             <SoSubTitle tt="uppercase">Weekly Articles</SoSubTitle>
