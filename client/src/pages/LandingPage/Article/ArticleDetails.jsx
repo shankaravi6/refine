@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import NavBar from "../../../components/layout/Navigation/NavBar";
 import {
   NavText,
   SoBox,
@@ -115,7 +114,6 @@ const ArticleDetails = () => {
   if (loading) {
     return (
       <SoContainer>
-        <NavBar />
         <SoSection>
           <SoFlex
             dir="column"
@@ -138,7 +136,6 @@ const ArticleDetails = () => {
   if (error || !article) {
     return (
       <SoContainer>
-        <NavBar />
         <SoSection>
           <SoFlex
             dir="column"
@@ -176,8 +173,11 @@ const ArticleDetails = () => {
           }
         }
         .article-content p {
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.75rem;
           line-height: 1.8;
+        }
+        .article-content p:last-child {
+          margin-bottom: 0;
         }
         .article-content h1, .article-content h2, .article-content h3,
         .article-content h4, .article-content h5, .article-content h6 {
@@ -204,14 +204,13 @@ const ArticleDetails = () => {
           margin-bottom: 0.5rem;
         }
       `}</style>
-      <NavBar />
 
       {/* Hero Image/Thumbnail Section */}
       {article?.imageName && (
         <SoCover
           w="100%"
-          m="1.5rem 0 3rem 0"
-          sm_m="2.5rem 0 0rem 0"
+          m="0rem 0 3rem 0"
+          sm_m="0rem 0 0rem 0"
           sp="0 0 0rem 0"
           className="hero-image-section"
           style={{
@@ -431,7 +430,7 @@ const ArticleDetails = () => {
               }`,
             }}
           >
-            <SoFlex gap="1rem">
+            <SoFlex gap="1rem" sjc="space-between" sm_dir="row">
               <SoBox
                 bg={palette.tag.bg}
                 p="0.5rem 1.25rem"
