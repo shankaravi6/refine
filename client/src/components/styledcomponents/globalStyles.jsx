@@ -74,6 +74,7 @@ export const SoCover = SiloComponent(styled.div`
   @media screen and (max-width: 970px) {
     padding: ${(props) => (props.sp ? props.sp : "none")};
     height: ${(props) => (props.sh ? props.sh : "none")};
+    margin: ${(props) => (props.sm_m ? props.sm_m : "unset")};
   }
 `);
 

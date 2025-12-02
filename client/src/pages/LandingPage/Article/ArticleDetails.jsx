@@ -211,6 +211,8 @@ const ArticleDetails = () => {
         <SoCover
           w="100%"
           m="1.5rem 0 3rem 0"
+          sm_m="2.5rem 0 0rem 0"
+          sp="0 0 0rem 0"
           className="hero-image-section"
           style={{
             height: "55vh",
