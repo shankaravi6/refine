@@ -18,7 +18,17 @@ const MasonryLayout = ({ articleData }) => {
   const navigate = useNavigate();
 
   const handleArticleDet = (articleData) => {
-    navigate("/articledetails", { state: { articleData } });
+    // Store scroll position before navigating
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    
+    // Use primaryId or _id for the URL, fallback to _id if primaryId doesn't exist
+    const articleId = articleData.primaryId || articleData._id || articleData.id;
+    if (articleId) {
+      navigate(`/articledetails/${articleId}`, { state: { articleData } });
+    } else {
+      // Fallback to old method if no ID found
+      navigate("/articledetails", { state: { articleData } });
+    }
   };
 
   return (

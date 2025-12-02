@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import {
   SoBox,
   SoContainer,
@@ -20,6 +20,7 @@ const ArticleSection = () => {
   // const [articleData, setArticleData] = useState(articleDataList.slice(0, 5));
   const [articleData, setArticleData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const hasFetchedRef = useRef(false);
 
   const fetchMoreArticles = () => {
     setTimeout(() => {
@@ -35,8 +36,27 @@ const ArticleSection = () => {
   };
 
   useEffect(() => {
+    // Check if we have cached data in sessionStorage
+    const cachedData = sessionStorage.getItem('cachedArticleData');
+    if (cachedData) {
+      try {
+        const parsedData = JSON.parse(cachedData);
+        setArticleData(parsedData);
+        hasFetchedRef.current = true;
+        return;
+      } catch (error) {
+        console.error("Error parsing cached article data:", error);
+      }
+    }
+
+    // Only fetch if we haven't fetched before
+    if (hasFetchedRef.current) {
+      return;
+    }
+
     const getArticleData = async () => {
       try {
+        hasFetchedRef.current = true;
         const articleDataResponse = await axios.get(
           `${BASE_URL}/api/data/${"refine_article"}`
         );
@@ -54,8 +74,11 @@ const ArticleSection = () => {
           });
 
         setArticleData(formattedArticleData);
+        // Cache the data in sessionStorage
+        sessionStorage.setItem('cachedArticleData', JSON.stringify(formattedArticleData));
       } catch (error) {
         console.error("Error fetching article data:", error);
+        hasFetchedRef.current = false; // Reset on error so it can retry
       }
     };
     getArticleData();

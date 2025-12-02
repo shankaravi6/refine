@@ -11,7 +11,7 @@ const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" exact element={<LandingPage />} />
-        <Route path="/articledetails" exact element={<ArticleDetails />} />
+        <Route path="/articledetails/:id" element={<ArticleDetails />} />
         {/* <Route path="/admin" element={<AdminLogin />} />
         <Route element={<ProtectRoute />}>
           <Route path="/admin/*" element={<AdminPage />} />

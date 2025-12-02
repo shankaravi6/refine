@@ -46,7 +46,7 @@ export const SoSection = SiloComponent(styled.section`
   width: 100%;
   height: ${(props) => (props.h ? props.h : "unset")};
   max-width: ${(props) => (props.mw ? props.mw : "1300px")};
-  margin:0 auto 0 auto;
+  margin: 0 auto 0 auto;
   background: ${(props) =>
     props.bg ? props.bg : `${props.palette.background.high}`};
   padding: ${(props) => (props.p ? props.p : "unset")};
@@ -120,7 +120,6 @@ export const SoBox = styled.div`
     transform: translateX(0) !important;
     display: ${(props) => (props.sdisplay ? props.sdisplay : "flex")};
     padding: ${(props) => (props.sp ? props.sp : "auto")};
-
   }
   @media screen and (max-width: 1125px) {
     width: ${(props) => (props.mw ? props.mw : "none")};
@@ -176,15 +175,18 @@ export const SoTitle = SiloComponent(styled.h1`
   font-family: FrontPage;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(2rem, 10vw, 15rem)")};
   text-align: center;
-  letter-spacing: ${(props) => (props.ls ? props.ls : "clamp(1rem, 5vw, 2rem)")};
-  color: ${(props) => props.color ? props.color : props.palette.text.main};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
-  margin: unset;
+  letter-spacing: ${(props) =>
+    props.ls ? props.ls : "clamp(1rem, 5vw, 2rem)"};
+  color: ${(props) => (props.color ? props.color : props.palette.text.main)};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
+  margin: ${(props) => (props.m ? props.m : "unset")};
+  line-height: ${(props) => (props.lh ? props.lh : "unset")};
 
   @media screen and (max-width: 960px) {
     /* letter-spacing: 30px; */
     text-align: center;
-    margin-left: ${(props) => props.s_ml ? props.s_ml : "30px"};
+    margin-left: ${(props) => (props.s_ml ? props.s_ml : "30px")};
+    line-height: ${(props) => (props.s_lh ? props.s_lh : "unset")};
   }
 
   /* &::before {
@@ -214,21 +216,20 @@ export const SoHeadLineText = SiloComponent(styled.p`
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   background: ${(props) => (props.bg ? props.bg : "unset")};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   font-style: ${(props) => (props.fst ? props.fst : "italic")};
-
 `);
 
 export const SoSubTitle = SiloComponent(styled.h1`
   font-family: Ezrademo;
   font-size: ${(props) => (props.fs ? props.fs : "clamp(1rem, 5vw, 2.5rem)")};
-  text-align: ${(props) => props.ta ? props.ta :"center"};
+  text-align: ${(props) => (props.ta ? props.ta : "center")};
   letter-spacing: ${(props) => (props.ls ? props.ls : "0px")};
   color: ${(props) => (props.color ? props.color : props.palette.text.main)};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   background: ${(props) => (props.bg ? props.bg : "unset")};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
 `);
 
@@ -241,7 +242,7 @@ export const NavText = SiloComponent(styled.p`
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   background: ${(props) => (props.bg ? props.bg : "unset")};
   font-weight: ${(props) => (props.fw ? props.fw : "unset")};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
   margin: unset;
 
   &::after {
@@ -262,14 +263,14 @@ export const NavText = SiloComponent(styled.p`
 export const SoTypography = SiloComponent(styled.p`
   font-size: ${(props) => (props.fs ? props.fs : "clamp(1rem, 5vw, 1.5rem)")};
   font-weight: ${(props) => (props.fw ? props.fw : "normal")};
-  letter-spacing: ${(props) => props.ls ? props.ls : '1px'};
+  letter-spacing: ${(props) => (props.ls ? props.ls : "1px")};
   font-family: ${(props) => (props.fm ? props.fm : "Kulim Parkm, sans-serif")};
   padding: ${(props) => props.p};
   margin: ${(props) => props.m};
   color: ${(props) => (props.color ? props.color : props.palette.text.main)};
   text-align: ${(props) => (props.ta ? props.ta : "justify")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
 `);
 
 export const SoSpan = SiloComponent(styled.span`
@@ -283,5 +284,5 @@ export const SoSpan = SiloComponent(styled.span`
   text-align: ${(props) => (props.ta ? props.ta : "justify")};
   text-shadow: ${(props) => (props.ts ? props.ts : "unset")};
   font-style: ${(props) => (props.fst ? props.fst : "normal")};
-  text-transform: ${(props) => props.tt ? props.tt : "unset"};
+  text-transform: ${(props) => (props.tt ? props.tt : "unset")};
 `);

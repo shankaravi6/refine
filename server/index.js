@@ -171,6 +171,7 @@ app.post('/getsinglearticle', async (req, res) => {
       _id: article._id,
       primaryId: article.primaryId,
       title: article.title,
+      shortTitle: article.shortTitle,
       shortDesc: article.shortDesc,
       LongDesc: article.LongDesc,
       category: article.category,
