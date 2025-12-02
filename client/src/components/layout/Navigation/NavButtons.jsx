@@ -25,7 +25,7 @@ const NavButtons = () => {
           Watch Live Launch
         </a>
       </SoPlainButton>
-      {mode == "light" ? (
+      {/* {mode == "light" ? (
         <SoCover
           className="cursor-pointer"
           onClick={() => {
@@ -43,7 +43,7 @@ const NavButtons = () => {
         >
           <LightModeIcon style={{ color: `${colorTokens.drops[200]}` }} />
         </SoCover>
-      )}
+      )} */}
     </SoFlex>
   );
 };
