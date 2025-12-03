@@ -178,7 +178,7 @@ const ArticleSection = () => {
                 Loading Articles...
               </SoSubTitle>
               <SoBox
-                p="30px"
+                p="25px"
                 m="20px 0"
                 style={{
                   maxWidth: "600px",
@@ -187,7 +187,7 @@ const ArticleSection = () => {
                   border: `1px solid ${palette.text.low || "rgba(0,0,0,0.1)"}`,
                 }}
               >
-                <SoFlex dir="column" gap="15px">
+                <SoFlex dir="column" gap="15px" p="1rem">
                   <SoSubTitle
                     fs="clamp(1rem, 3vw, 1.5rem)"
                     ta="center"
